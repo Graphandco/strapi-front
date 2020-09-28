@@ -1,3 +1,7 @@
+//////////////////////////////////////////////////
+// Hero
+//////////////////////////////////////////////////
+
 .hero {
     height: calc(100vh - 50px);
     padding: 0 var(--p2);
@@ -19,16 +23,6 @@
     .desc {
         margin-left: 1rem;
         position: relative;
-
-        &:before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--orange);
-        }
     }
 
     .cta {
@@ -53,14 +47,66 @@
     max-width: 400px;
 }
 
+//////////////////////////////////////////////////
+// About
+//////////////////////////////////////////////////
+
+.home-about {
+    position: relative;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content {
+        h2 {
+            margin-left: 1rem;
+        }
+        padding: 150px 2rem;
+        color: var(--bg-color);
+    }
+}
+
+.divider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    svg {
+        fill: #1e202a;
+    }
+
+    &-top {
+        top: 0;
+    }
+
+    &-bottom {
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+}
+
+//////////////////////////////////////////////////
+// Tablet
+//////////////////////////////////////////////////
+
 @media (max-width: 979px) {
     .hero-wrapper {
         grid-template-columns: 1fr;
     }
 }
 
+//////////////////////////////////////////////////
+// Mobile
+//////////////////////////////////////////////////
+
 @media (max-width: 768px) {
     .hero-image {
-        max-width: 300px;
+        max-width: 350px;
     }
 }

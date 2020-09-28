@@ -11,7 +11,7 @@ function App() {
             <Header />
             <main>
                 <Home />
-                <Tips />
+                {/* <Tips /> */}
             </main>
         </TipsProvider>
     );

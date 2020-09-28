@@ -3,7 +3,9 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-column-gap: calc(2rem + 3vw);
     grid-row-gap: calc(2rem + 3vw);
-    padding: var(--p2);
+    padding: 9rem var(--p2);
+    background-color: var(--white);
+    position: relative;
 
     .tip-card {
         border-radius: 10px;
@@ -14,6 +16,7 @@
         position: relative;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
             0 10px 10px rgba(0, 0, 0, 0.22);
+        display: none;
 
         &:before {
             content: '';

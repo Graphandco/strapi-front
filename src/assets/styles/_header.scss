@@ -6,6 +6,19 @@ header {
     left: 0;
     height: 50px;
 
+    svg {
+        position: absolute;
+        fill: white;
+        opacity: 0.025;
+        pointer-events: none;
+    }
+
+    .shape-1 {
+        width: calc(20vw + 250px);
+        top: -20vw;
+        left: 10vw;
+    }
+
     .logo {
         width: auto;
         height: 100%;

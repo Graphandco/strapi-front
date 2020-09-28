@@ -9,7 +9,7 @@ const Hero = () => {
                 <div className='hero-content'>
                     <p className='site-title'>Graph and Co</p>
                     <h1 className='lead'>Un métier, une passion</h1>
-                    <p className='desc'>
+                    <p className='desc orange-line'>
                         Je suis un développeur web spécialisé dans la création
                         de sites internet modernes et intuitifs.
                     </p>

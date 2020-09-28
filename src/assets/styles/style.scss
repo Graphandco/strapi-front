@@ -22,9 +22,33 @@ img {
     max-width: 100%;
 }
 
+h1,
+h2,
+h3 {
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+}
+
 a {
     text-decoration: none;
     color: inherit;
+}
+
+p {
+    margin-bottom: 0.8rem;
+}
+
+.orange-line:before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--orange);
 }
 
 main {
