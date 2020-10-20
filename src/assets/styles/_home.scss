@@ -29,22 +29,12 @@
         margin-top: 2rem;
         display: flex;
         justify-content: center;
-
-        a {
-            border: 1px solid var(--orange);
-            padding: 0.8rem 2rem;
-            background-color: var(--orange);
-            color: white;
-            transition: 0.3s;
-            &:hover {
-                background-color: transparent;
-            }
-        }
     }
 }
 
 .hero-image {
     max-width: 400px;
+    padding-left: 2rem;
 }
 
 //////////////////////////////////////////////////
@@ -66,7 +56,7 @@
         h2 {
             margin-left: 1rem;
         }
-        padding: 150px 2rem;
+        padding: 120px 3rem;
         color: var(--bg-color);
     }
 }
@@ -96,8 +86,17 @@
 //////////////////////////////////////////////////
 
 @media (max-width: 979px) {
-    .hero-wrapper {
+    .home-about {
         grid-template-columns: 1fr;
+
+        img {
+            min-height: 300px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding-top: 2rem;
+        }
     }
 }
 
@@ -106,6 +105,9 @@
 //////////////////////////////////////////////////
 
 @media (max-width: 768px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+    }
     .hero-image {
         max-width: 350px;
     }

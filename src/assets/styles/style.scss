@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,300&display=swap');
 
 @import './variables';
-@import './header';
-@import './home';
 
 *,
 *::before,
@@ -16,20 +14,23 @@ body {
     background-color: var(--bg-color);
     font-family: 'Nunito', sans-serif;
     color: #cacaca;
+    font-size: 15px;
 }
 
 img {
     max-width: 100%;
 }
 
-h1,
-h2,
-h3 {
-    position: relative;
+h1 {
+    margin-bottom: 2rem;
 }
 
 h2 {
     margin-bottom: 1.5rem;
+}
+
+h3 {
+    margin-bottom: 0.2rem;
 }
 
 a {
@@ -41,18 +42,102 @@ p {
     margin-bottom: 0.8rem;
 }
 
-.orange-line:before {
-    content: '';
-    position: absolute;
-    left: -1rem;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background-color: var(--orange);
+.site-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     margin-top: 50px;
+    flex-grow: 1;
 }
 
+.orange-line {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 90%;
+        width: 2px;
+        background-color: var(--orange);
+    }
+}
+
+// .orange-point {
+//     position: relative;
+//     &:before {
+//         content: '';
+//         position: absolute;
+//         left: -0.8rem;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         height: 5px;
+//         width: 5px;
+//         border-radius: 50%;
+//         background-color: var(--orange);
+//     }
+// }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2rem;
+    background-color: var(--white);
+    position: relative;
+
+    .footer-shape-divider {
+        position: absolute;
+        top: -29px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .footer-shape-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 30px;
+    }
+
+    .footer-shape-divider .shape-fill {
+        fill: var(--white);
+    }
+
+    img {
+        width: 30px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            line-height: 1.2;
+            span {
+                font-size: 0.8rem;
+                color: var(--bg-color);
+                opacity: 0.8;
+                transition: 0.3s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@import './header';
+@import './home';
 @import './tip-card';
+@import './page-content';
+@import './realisations';

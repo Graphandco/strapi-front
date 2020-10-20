@@ -2,14 +2,14 @@ import React, { useState, useContext } from 'react';
 import TipCard from './TipCard';
 import { TipsContext } from '../contexts/TipsContext';
 
-import TopCurves from '../../assets/images/top-curves.svg';
+import PageContent from '../PageContent';
 
 const Tips = () => {
     const [tips, setTips, isLoading, setIsLoading] = useContext(TipsContext);
     return (
-        <>
+        <PageContent title='Coding Tips'>
             <div className='tips-wrapper'>
-                <div class='divider divider-top'>
+                {/* <div class='divider divider-top'>
                     <svg
                         data-name='Layer 1'
                         xmlns='http://www.w3.org/2000/svg'
@@ -34,13 +34,12 @@ const Tips = () => {
                             class='shape-fill'
                         ></path>
                     </svg>
-                </div>
+                </div> */}
                 {isLoading
                     ? 'Loading...'
                     : tips.map(tip => <TipCard key={tip.id} tip={tip} />)}
             </div>
-            <footer style={{ minHeight: 500 }}></footer>
-        </>
+            </PageContent>
     );
 };
 

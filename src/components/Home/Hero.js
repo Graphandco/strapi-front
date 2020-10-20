@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeIllustration from '../../assets/images/header-illustration.svg';
-import TopCurves from '../../assets/images/top-curves.svg';
+//import TopCurves from '../../assets/images/top-curves.svg';
+import CustomButton from '../custom/CustomButton';
 
 const Hero = () => {
     return (
@@ -14,7 +15,7 @@ const Hero = () => {
                         de sites internet modernes et intuitifs.
                     </p>
                     <div className='cta'>
-                        <a href='#'>Voir mon travail</a>
+                        <CustomButton title='Voir mon travail' link='realisations' />
                     </div>
                 </div>
                 <div className='hero-image'>

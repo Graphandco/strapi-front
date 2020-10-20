@@ -5,14 +5,14 @@ export const TipsContext = createContext();
 
 export const TipsProvider = props => {
     const [tips, setTips] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const getTips = async () => {
             try {
                 const response = await Axios.get('http://localhost:1337/tips');
                 setTips(response.data);
-                console.log(response.data);
+                //console.log(response.data);
                 setIsLoading(false);
             } catch (e) {
                 console.log(
