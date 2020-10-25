@@ -5,7 +5,7 @@ import CustomButton from '../custom/CustomButton';
 
 const Hero = () => {
     return (
-        <div className='hero'>
+        <section className='hero'>
             <div className='hero-wrapper'>
                 <div className='hero-content'>
                     <p className='site-title'>Graph and Co</p>
@@ -22,7 +22,7 @@ const Hero = () => {
                     <img src={HomeIllustration} alt='Illustration' />
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

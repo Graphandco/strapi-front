@@ -1,16 +1,4 @@
-header {
-    @include width-1200;
-
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    z-index: 2;
-
+.shapes {
     svg {
         position: absolute;
         fill: white;
@@ -23,33 +11,120 @@ header {
         top: -20vw;
         left: 10vw;
     }
+}
+
+.header {
+    @include width-1200;
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(30px + 2vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+    transition: 0.3s;
 
     .logo {
         width: auto;
         height: 100%;
         background-color: var(--white);
-        padding: 0.8rem;
+        padding: calc(0.5rem + 0.5vw);
+        transition: 0.3s;
     }
 
     .navbar {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        width: 100%;
         height: 100%;
-        padding-right: 5vw;
         background-color: transparent;
         transition: 0.3s;
+        position: relative;
 
-        &.active {
-            background-color: var(--bg-color);
+        .page-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 5px;
+            background-color: var(--orange);
+            transition: 0.3s;
         }
 
         a {
-            margin: 0 0.8rem;
+            padding: 0 2rem;
             text-transform: capitalize;
             font-weight: 700;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            width: 25%;
+            transition: 0.3s;
+            opacity: 1;
+
+            &:nth-child(1).active ~ .page-indicator {
+                left: 0;
+            }
+            &:nth-child(2).active ~ .page-indicator {
+                left: 25%;
+            }
+            &:nth-child(3).active ~ .page-indicator {
+                left: 50%;
+            }
+            &:nth-child(4).active ~ .page-indicator {
+                left: 75%;
+            }
+            &:nth-child(1):hover ~ .page-indicator {
+                left: 0;
+            }
+            &:nth-child(2):hover ~ .page-indicator {
+                left: 25%;
+            }
+            &:nth-child(3):hover ~ .page-indicator {
+                left: 50%;
+            }
+            &:nth-child(4):hover ~ .page-indicator {
+                left: 75%;
+            }
+            // &:before {
+            //     content: '';
+            //     position: absolute;
+            //     top: 0;
+            //     width: 100%;
+            //     height: 5px;
+            //     background-color: var(--orange);
+            //     transition: 0.3s;
+            //     opacity: 0;
+            // }
+            // &:hover:before,
+            // &.active:before {
+            //     opacity: 1;
+            // }
+        }
+    }
+
+    &.active {
+        background-color: var(--grey);
+        height: 35px;
+
+        .logo {
+            //background-color: transparent;
+            padding: calc(0.4rem + 0.2vw);
+        }
+
+        .page-indicator {
+            height: 3px;
+        }
+
+        .navbar a {
+            opacity: 0.7;
         }
     }
 }

@@ -3,7 +3,7 @@ import AboutImage from '../../assets/images/about.jpg';
 
 const About = () => {
     return (
-        <div className='home-about'>
+        <section className='home-about'>
             <div className='divider divider-top'>
                 <svg
                     data-name='Layer 1'
@@ -48,7 +48,7 @@ const About = () => {
                     types d'outils.
                 </p>
             </div>
-        </div>
+        </section>
     );
 };
 

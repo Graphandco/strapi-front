@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
-    const [navScrolled, setNavScrolled] = useState(false)
 
     
     const navLinks = [
@@ -24,23 +23,18 @@ const Nav = () => {
         }
     ];
 
-const changeToScrolled = () => {
-    if(window.scrollY >= 100) {
-        setNavScrolled(true)
-    } else {
-        setNavScrolled(false)
-    }
-}
 
-window.addEventListener('scroll', changeToScrolled)
+
+
 
     return (
-        <nav className={navScrolled ? 'navbar active' : 'navbar'}>
+        <nav className='navbar'>
             {navLinks.map(navLink => (
                 <NavLink to={navLink.path} key={navLink.name} exact>
                     <span>{navLink.name}</span>
                 </NavLink>
             ))}
+            <div className="page-indicator"></div>
         </nav>
     );
 };

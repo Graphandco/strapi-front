@@ -1,10 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Logo from '../assets/images/logo.png';
 import Nav from './Nav';
 
 const Header = () => {
+
+    const [navScrolled, setNavScrolled] = useState(false)
+
+    const changeToScrolled = () => {
+        if(window.scrollY >= 100) {
+            setNavScrolled(true)
+        } else {
+            setNavScrolled(false)
+        }
+    }
+    
+    window.addEventListener('scroll', changeToScrolled)
+
     return (
-        <header>
+        <>
             <div className='shapes'>
                 <svg
                     className='shape-1'
@@ -17,9 +30,11 @@ const Header = () => {
                     />
                 </svg>
             </div>
+        <header className={navScrolled ? 'header active' : 'header'}>
             <img className='logo' src={Logo} alt='Logo' />
             <Nav />
         </header>
+        </>
     );
 };
 
