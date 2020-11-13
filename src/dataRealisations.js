@@ -9,49 +9,60 @@ import GetAMovie from './assets/images/realisations/get-a-movie.jpg';
 export default [
     {
         name: 'Willow Tarot',
+        slug: "willow",
         image: Willow,
         link: 'https://willow-tarot.fr/',
-        desc: "Site qui propose un accompagnement à l'aide de la taromancie"
+        desc: "Site qui propose un accompagnement à l'aide de la taromancie",
+    homepage: true
     },
     {
         name: "Get'a'Movie",
+        slug: 'getamovie',
         image: GetAMovie,
         link: 'https://get-a-movie.graphandco.com/',
-        desc: "Application React avec l'API de IMDB pour rechercher un film"
+        desc: "Application React avec l'API de IMDB pour rechercher un film",
+    homepage: true
     },
     {
         name: 'Burgerio',
+        slug: 'burgerio',
         image: Burgerio,
         link: 'https://burgerio.graphandco.com/',
         desc:
-            "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers"
+            "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
+        homepage: true
     },
     {
         name: 'La Toscana',
+        slug: 'toscana',
         image: Toscana,
         link: 'https://www.latoscana.fr/',
-        desc:
-            "Réalisation sur Wordpress d'un site one-page pour une pizzeria"
+        desc: "Réalisation sur Wordpress d'un site one-page pour une pizzeria",
+        homepage: false
     },
     {
         name: 'Breaking Bad',
+        slug: 'breakingbad',
         image: BreakingBad,
         link: 'https://breaking-bad.graphandco.com/',
-        desc:
-            "App codée avec React et l'API Breaking Bad pour chercher un personnage de la série "
+        desc: "App codée avec React et l'API Breaking Bad pour chercher un personnage de la série ",
+        homepage: false
     },
     {
         name: 'Fun with flags',
+        slug: 'funwithflags',
         image: FunWithFlags,
         link: 'https://funwithflags.graphandco.com/',
-        desc:
-            "Utilisation d'une API avec React pour chercher un pays et le localiser"
+        desc: "Utilisation d'une API avec React pour chercher un pays et le localiser",
+        homepage: false
     },
     {
         name: 'Fylo',
+        slug: 'fylo',
         image: Fylo,
         link: 'https://fylo.graphandco.com/',
-        desc: "Création d'une maquette pour un service de stockage en ligne"
+        desc: "Création d'une maquette pour un service de stockage en ligne",
+    homepage: true
     },
     // {
     //     name: 'Infinite Cat-Scroll',

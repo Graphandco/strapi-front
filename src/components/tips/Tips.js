@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import TipCard from './TipCard';
 import { TipsContext } from '../contexts/TipsContext';
 
 import PageContent from '../PageContent';
 
 const Tips = () => {
-    const [tips, setTips, isLoading, setIsLoading] = useContext(TipsContext);
+    const [tips, isLoading] = useContext(TipsContext);
     return (
         <PageContent title='Coding Tips'>
             <div className='tips-wrapper'>

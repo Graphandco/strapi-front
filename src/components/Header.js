@@ -31,8 +31,10 @@ const Header = () => {
                 </svg>
             </div>
         <header className={navScrolled ? 'header active' : 'header'}>
-            <img className='logo' src={Logo} alt='Logo' />
-            <Nav />
+            <div className="header-wrapper">
+                <img className='logo' src={Logo} alt='Logo' />
+                <Nav />
+            </div>
         </header>
         </>
     );

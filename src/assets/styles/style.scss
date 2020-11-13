@@ -43,14 +43,15 @@ p {
 }
 
 .site-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    //max-width: 1200px;
+    //margin: 0 auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 main {
+    @include width-1200;
     margin-top: 50px;
     flex-grow: 1;
 }
@@ -85,12 +86,15 @@ main {
 // }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 2rem;
     background-color: var(--white);
     position: relative;
+    .footer-wrapper {
+        @include width-1200;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 2rem;
+    }
 
     .footer-shape-divider {
         position: absolute;
@@ -133,6 +137,12 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 979px) {
+    main {
+        max-width: 100%;
     }
 }
 
