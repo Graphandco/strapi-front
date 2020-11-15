@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import Logo from '../assets/images/logo.png';
+import LogoImg from '../assets/images/logo.png';
 import Nav from './Nav';
+
+import styled from 'styled-components';
 
 const Header = () => {
 
@@ -30,14 +32,46 @@ const Header = () => {
                     />
                 </svg>
             </div>
-        <header className={navScrolled ? 'header active' : 'header'}>
-            <div className="header-wrapper">
-                <img className='logo' src={Logo} alt='Logo' />
-                <Nav />
-            </div>
-        </header>
+        <MainHeader navScrolled={navScrolled} className={navScrolled ? 'header active' : 'header'}>
+            <HeaderWrapper>
+                <Logo navScrolled={navScrolled} src={LogoImg} alt='Logo' />
+                <Nav navScrolled={navScrolled} />
+                </HeaderWrapper>
+        </MainHeader>
         </>
     );
 };
+
+const MainHeader = styled.header`
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 2;
+    transition: 0.3s;
+    background-color: ${props => props.navScrolled ? 'var(--white)' : 'transparent'};
+    height: ${props => props.navScrolled ? '45px' : 'calc(30px + 2vw)'};
+    
+`;
+
+const HeaderWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--p2);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+`;
+
+const Logo = styled.img`
+    width: auto;
+    height: 100%;
+    background-color: var(--white);
+    transition: 0.3s;
+    padding: ${props => props.navScrolled ? 'calc(0.4rem + 0.2vw)' : 'calc(0.5rem + 0.5vw)'};
+`;
 
 export default Header;

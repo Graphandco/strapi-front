@@ -2,41 +2,6 @@
 // Hero
 //////////////////////////////////////////////////
 
-.hero {
-    height: calc(100vh - 50px);
-    padding: 0 var(--p2);
-}
-
-.hero-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-    height: 100%;
-}
-
-.hero-content {
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        line-height: 1;
-    }
-    .desc {
-        margin-left: 1rem;
-        position: relative;
-    }
-
-    .cta {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-    }
-}
-
-.hero-image {
-    max-width: 400px;
-    padding-left: 2rem;
-}
-
 //////////////////////////////////////////////////
 // About
 //////////////////////////////////////////////////
@@ -97,7 +62,6 @@
         .description {
             grid-column: 1 / 5;
             grid-row: 1 / 2;
-            align-self: end;
 
             h2 {
                 margin-left: 1rem;
@@ -226,7 +190,45 @@
             padding-top: 2rem;
         }
     }
+    .home-realisations {
+        .realisations {
+            gap: 3rem;
 
+            .description {
+                grid-column: 1 / 6;
+            }
+        }
+        .realisation {
+            &.willow {
+                grid-column: 6 / 11;
+                grid-row: 1 / 2;
+            }
+
+            &.burgerio {
+                grid-column: 1 / 5;
+                grid-row: 2 / 3;
+            }
+
+            &.fylo {
+                grid-column: 5 / 9;
+                grid-row: 2 / 3;
+            }
+
+            &.getamovie {
+                grid-column: 9 / 11;
+                grid-row: 2 / 3;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .hero-image {
+        max-width: 350px;
+    }
     .home-realisations {
         grid-template-columns: 1fr;
         gap: 0;
@@ -245,18 +247,13 @@
     }
 }
 
-@media (max-width: 768px) {
-    .hero-wrapper {
-        grid-template-columns: 1fr;
-    }
-    .hero-image {
-        max-width: 350px;
-    }
-}
-
 //////////////////////////////////////////////////
 // Mobile
 //////////////////////////////////////////////////
 
 @media (max-width: 576px) {
+    .realisation {
+        width: 300px;
+        max-width: 100%;
+    }
 }
